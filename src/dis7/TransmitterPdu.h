@@ -1,5 +1,4 @@
-#ifndef TRANSMITTERPDU_H
-#define TRANSMITTERPDU_H
+#pragma once
 
 #include <dis7/RadioType.h>
 #include <dis7/Vector3Double.h>
