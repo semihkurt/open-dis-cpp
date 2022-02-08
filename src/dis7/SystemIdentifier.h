@@ -1,7 +1,5 @@
-#ifndef SYSTEMIDENTIFIER_H
-#define SYSTEMIDENTIFIER_H
+#pragma once
 
-#include <dis7/ChangeOptions.h>
 #include <utils/DataStream.h>
 #include <dis7/msLibMacro.h>
 
@@ -24,10 +22,10 @@ protected:
   unsigned short _systemName; 
 
   /** mode of operation for the system, an enumeration */
-  unsigned short _systemMode; 
+  unsigned char _systemMode; 
 
   /** status of this PDU, see section 6.2.15 */
-  ChangeOptions _changeOptions; 
+  unsigned char _changeOptions;
 
 
  public:
@@ -43,12 +41,11 @@ protected:
     unsigned short getSystemName() const; 
     void setSystemName(unsigned short pX); 
 
-    unsigned short getSystemMode() const; 
-    void setSystemMode(unsigned short pX); 
+    unsigned char getSystemMode() const; 
+    void setSystemMode(unsigned char pX); 
 
-    ChangeOptions& getChangeOptions(); 
-    const ChangeOptions&  getChangeOptions() const; 
-    void setChangeOptions(const ChangeOptions    &pX);
+    unsigned char getChangeOptions() const;
+    void setChangeOptions(unsigned char pX);
 
 
 virtual int getMarshalledSize() const;
@@ -57,7 +54,6 @@ virtual int getMarshalledSize() const;
 };
 }
 
-#endif
 // Copyright (c) 1995-2009 held by the author(s).  All rights reserved.
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions
